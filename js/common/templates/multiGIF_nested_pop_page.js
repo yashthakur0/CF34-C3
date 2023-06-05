@@ -62,7 +62,6 @@ $(document).ready(function() {
 });
 
   function resetPopupFun(){
-	  console.log("123");
 	$(".popup_overlay").hide();
 	$(".zoom_icon").show();
 	$(".popup-section").css("display", "none");

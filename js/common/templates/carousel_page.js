@@ -156,6 +156,7 @@ function showSlides(n) {
 }
 
 function replayGIF($img) {
+  console.log('replayGif called');
   if ($img.length === 1 && $img.prop('tagName').toLowerCase() == 'img') {
       $img.data('src', $img.attr('src'))
           .attr('src', '')

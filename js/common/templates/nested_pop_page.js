@@ -18,7 +18,6 @@ function replayPage(){
 }
 
 /*---------------Variable declartions---------*/
-var mainSlideImagePath;
 var tll;
 var cPageObj = {};
 cPageObj.scrubberBool = false;

@@ -21,19 +21,13 @@ function replayPage(){
 /*---------------Variable declartions---------*/
 var tll;
 var scrubberBool = false;
-var mainSlideImagePath;
+
 var disableButton = true;
 $(document).ready(function() {
    model.videoFlg=false
-   mainSlideImagePath = document.querySelector('.hotspot_box img').src;
    $("#page_exit").off().on("click", function(){
 		controller.ExitPopupFun()
 	})
-	let a = $("#cbtCia > img").attr("src");
-	let ext = a.split('.')[1];
-	// if((model.currTopic == (model.tTopics-1))&&(model.currPage==2) || ext != 'gif'){
-	// 	$("#audio_Icon, #replay_Icon").addClass("deactive").addClass("disabled").css("cursor", "default").css("opacity", "0.5").css("pointer-events", "none");
-	// }
    $(".button, .buttons").off().on("click", function() {
 	   //alert("Button clicked")
 		resetPopupFun()
@@ -65,7 +59,6 @@ $(document).ready(function() {
 });
 
   function resetPopupFun(){
-	reloadGIFs();
 	$(".popup_overlay").hide();
 	$(".zoom_icon").show();
 	$(".popup-section").css("display", "none");
@@ -73,17 +66,7 @@ $(document).ready(function() {
 	$(".button").css("pointer-events", "auto").css("cursor", "pointer").removeClass('active')
 }
 
-
 /*---------------------Functions---------------------*/
-function reloadGIFs() {
-	if (mainSlideImagePath.includes('.gif')) {
-		// The image has an extension of GIF, so let's reload it
-		let newPath = mainSlideImagePath + '?v=' + Math.random();
-		document.querySelector('.hotspot_box img').src = newPath;
-	}
-}
-
-
 function playAnimation(pageType) {
 
     //audioPlayer.loadAudioPath(model.audioPath + Audios);
