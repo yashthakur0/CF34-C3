@@ -277,6 +277,7 @@ Model.prototype.nextPage = function(_control) {
 		//-- Last page disable
 		return;
 	}
+	console.log(model.currTopic, (model.tTopics - 1), 7878);
 	
 	if((model.currPage<(model.tPagesArr[model.currTopic][model.currMod]-1))&&(model.menuData.getElementsByTagName("topic")[model.currTopic].getElementsByTagName("module")[model.currMod].getElementsByTagName("page")[model.currPage].getAttribute("subpagelevel")==null)){
 		model.currPage++

@@ -20,7 +20,6 @@ function replayPage(){
 
 /*---------------Variable declartions---------*/
 var tll;
-var mainSlideImagePath;
 var cPageObj = {};
 cPageObj.scrubberBool = false;
 cPageObj.id;
@@ -31,7 +30,6 @@ cPageObj.clickedArr = [];
 cPageObj.popupAudios = [];
 cPageObj.disableButton = true;
 $(document).ready(function() {
-	mainSlideImagePath = document.querySelector('.MainSlide img').src;
 	cPageObj.totalItems=$(".button, .buttons").length
 	model.videoFlg=false
 	$(".button, .buttons").on("click", function() {
@@ -63,7 +61,6 @@ $(document).ready(function() {
 });
 
 function resetPopupFun(){
-	reloadGIFs();
 	$(".slidePopup, .popupSection").css("display", "none");
 	$(".popup_overlay").hide();
 	$(".popup-section").css("display", "none");
@@ -71,13 +68,6 @@ function resetPopupFun(){
 }
 
 /*---------------------Functions---------------------*/
-function reloadGIFs() {
-	if (mainSlideImagePath.includes('.gif')) {
-		// The image has an extension of GIF, so let's reload it
-		let newPath = mainSlideImagePath + '?v=' + Math.random();
-		document.querySelector('.hotspot_box img').src = newPath;
-	}
-}
 function playAnimation(pageType) {
 	//$(".video-rt-text-scroll").mCustomScrollbar();
 	//$(".button, .buttons").css("pointer-events", "none").css("cursor","default")
